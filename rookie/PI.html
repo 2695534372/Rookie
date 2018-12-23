@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>胜负决定装置</title>
+    <style type="text/css">
+        .header{
+            background-color: #5CACEE;
+            color:white;
+            text-align: center;
+            padding: 10px;
+        }
+        .login{
+            text-align:center;
+            padding: 10px;
+        }
+        .user{
+            left: -10px;
+            height:23px;
+            width:200px;
+            padding-right:20px;
+        }
+        .password{
+            height:23px;
+            width:200px;
+            padding-right:20px;
+            text-align:center;
+        }
+        .mima{
+            position: relative;
+            top: -3px;
+            left: 8px;
+
+        }
+        .mima3{
+            position: relative;
+            top: -8px;
+            left: -8px;
+        }
+        .mima1{
+            position: relative;
+            top: -5px;
+            left: 8px;
+            height:23px;
+            width:200px;
+            padding-right:20px;
+        }
+        .mima2{
+            position: relative;
+            top: -11px;
+            left: -9px;
+            height:23px;
+            width:200px;
+            padding-right:20px;
+        }
+        .btn{
+            width: 200px;
+            height: 50px;
+        }
+    </style>
+    <script>
+        function GI(){
+            window.location.href="./GI.html";//跳转到游戏目录
+        }
+     </script>
+    <script>
+        function Login(){
+            window.location.href="./Login.html";//跳转到登录界面
+        }
+    </script>
+</head>
+<body background="./c.jpg">
+<div class="header">
+    <h2>欢迎使用胜负决定装置！</h2>
+</div>
+<div align="center" style ="margin-top: 20px">
+    <input type="button" style="width: 300px;height: 60px;" value="进入游戏" onclick="GI()" />
+</div>
+<div align="center" style ="margin-top: 20px">
+    <input type="button" style="width: 300px;height: 60px;" value="退出登录" onclick="Login()" />
+</div>
+
+</body>
+</html>
