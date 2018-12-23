@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>胜负决定装置</title>
+<style type="text/css">
+	
+	 .header{
+                background-color: #5CACEE;
+                color:white;
+                text-align: center;
+                padding: 10px;
+            }
+</style>
+
+    <script type="text/javascript">
+function guessit()
+{
+ var picname=new Array("./hammer.png","./scissors.png","./cloth.png");
+ var cpuselect = getRandom();
+ var cpu = document.getElementById("cpus");
+ cpu.src = "" + picname[cpuselect];
+  
+ var yourselect
+  for(var i=0;i<=2;i++)
+  {
+  if(document.f1.r1[i].checked==true)
+  {
+   yourselect=i;
+  }
+  }
+  
+ var you1 = document.getElementById("you1");
+  
+ you1.src=""+picname[yourselect];
+ 
+ if(comparevs(cpuselect,yourselect)==1)
+ {
+  alert("你赢了");
+ }
+ if(comparevs(cpuselect,yourselect)==0)
+ {
+  alert("平局");
+ }
+ if(comparevs(cpuselect,yourselect)==-1)
+ {
+  alert("你输了");
+ }
+ 
+}
+function comparevs( cpu, you)
+{
+ var win=0;//－1代表输,0代表不确定，1代表赢
+ switch(you - cpu)
+ {
+  case 2: {win=1;break;}
+  case 1: {win=-1;break;}
+  case 0: {win=0;break;}
+  case -1: {win=1;break;}
+  case -2: {win=-1;break;}
+ }
+ return win;
+ 
+}
+function getRandom()
+{
+ 
+ var rand=parseInt((Math.random()*1000)%3);
+ return rand;
+ alert(rand);
+ 
+ 
+ 
+}
+    </script>
+
+</head>
+
+<body class="header">
+    <form name="f1" id="f1">
+    <table class=""width="547" height="567" border="0" align="center" cellpadding="0" cellspacing="3">
+        <tr>
+            <td width="228" height="96">&nbsp;
+                
+            </td>
+            <td width="199" align="center">
+          <h3>猜拳游戏 </h3></td>
+            <td width="231">&nbsp;
+                
+            </td>
+        </tr>
+        <tr>
+            <td height="212">&nbsp;
+                
+            </td>
+            <td align="center" valign="top">
+                <p>
+                   <img src="./hammer.png" width="154" height="163" id="cpus" /></p>
+                <p>&nbsp;
+                    </p>
+                <p>
+                    <img src="./hammer.png" width="154" height="163" id="you1" /></p>
+            </td>
+            <td>&nbsp;
+                
+            </td>
+        </tr>
+        <tr>
+            <td height="126">
+                <img src="./hammer.png" width="154" height="163" />
+            </td>
+            <td>
+                <img src="./scissors.png" width="154" height="163" />
+            </td>
+            <td>
+                <img src="./cloth.png" width="154" height="163" />
+            </td>
+        </tr>
+        <tr>
+            <td height="57" align="center">
+                <input name="r1" type="radio" id="s1" value="1" checked="checked" />
+                锤子
+            </td>
+            <td align="center">
+                <input type="radio" name="r1" id="s2" value="2" />
+                剪刀
+            </td>
+            <td align="center">
+                <input type="radio" name="r1" id="s3" value="3" />
+                布
+            </td>
+        </tr>
+        <tr>
+            <td height="21">&nbsp;
+                
+            </td>
+            <td align="center">
+                <input type="button" name="button" id="button" value="出拳" onclick="guessit()" />
+            </td>
+            <td>&nbsp;
+                
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>
